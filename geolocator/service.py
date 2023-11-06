@@ -3,7 +3,7 @@ class Service:
         self.database = database
         self.geolocation_client = geolocation_client
 
-    def retrieve_cities(self, latitude, logitude,):
+    def retrieve_cities(self, latitude, longitude,):
         cities = self.retrieve_cities_from_db( latitude, longitude, )
 
         if cities:
