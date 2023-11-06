@@ -2,7 +2,7 @@ import requests
 
 
 class Client:
-limit = 10
+    limit = 10
 
     def __init__(self, api_key):
         self._api_key = api_key
