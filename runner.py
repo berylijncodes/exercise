@@ -1,5 +1,6 @@
 import os
 from dotenv import load_dotenv
+from prettytable import PrettyTable
 
 from geolocator.client import Client
 from geolocator.database import Database
@@ -28,3 +29,12 @@ print("Retrieving cities and country codes for: ", latitude, longitude,)
 
 # retrive database information for the location
 cities = service.retrieve_cities(latitude, longitude)
+
+# render data to user in a table form
+table = PrettyTable()
+table.field_names = ["Latitude", "Longitude", "City", "Country Code"]
+
+for city in cities:
+    table.add_row([city["latitude"], city["longitude"], city["name"], city["country"]])
+
+print(table)
