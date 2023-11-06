@@ -1,4 +1,7 @@
 import requests
+from typing import List
+
+from .models import City
 
 
 class Client:
@@ -7,7 +10,17 @@ class Client:
     def __init__(self, api_key):
         self._api_key = api_key
 
-    def get(self, latitude, longitude,):
+    def _serialize_data(self, raw_data: dict) -> City:
+       return [
+        {
+            "latitude": city["lat"],
+            "longitude": city["lon"],
+            "name": city["name"],
+            "country": city["country"]
+        } for city in raw_data
+       ]
+
+    def get(self, latitude, longitude) -> List[City]:
         url = f"http://api.openweathermap.org/geo/1.0/reverse?lat={latitude}&lon={longitude}&limit={self.limit}&appid={self._api_key}"
 
         print("Making API request.", url)
@@ -19,4 +32,4 @@ class Client:
 
         raw_data = response.json()
 
-        return raw_data
+        return self._serialize_data(raw_data)
