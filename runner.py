@@ -17,3 +17,4 @@ client = Client(geolocator_api_key)
 ui = UserInterface()
 
 # wire everything up below:
+print("Welcome to Geolocator")
