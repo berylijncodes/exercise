@@ -18,7 +18,7 @@ class Database:
         #     if self.connection:
         #         self.connection.close()
 
-    def _serialize_data(self, row) -> City:
+    def _serialize(self, row) -> City:
         return {
             "latitude": row[0],
             "longitude": row[1],
@@ -42,7 +42,7 @@ class Database:
 
         cities = res.fetchall()
 
-        return [self._serialize_data(city) for city in cities]
+        return [self._serialize(city) for city in cities]
 
     def write(self, latitude, longitude, city, country):
         cursor = self.connection.cursor()
