@@ -10,7 +10,7 @@ class Client:
     def __init__(self, api_key):
         self._api_key = api_key
 
-    def _serialize_data(self, raw_data: dict) -> City:
+    def _serialize(self, raw_data: dict) -> City:
        return [
         {
             "latitude": city["lat"],
@@ -32,4 +32,4 @@ class Client:
 
         raw_data = response.json()
 
-        return self._serialize_data(raw_data)
+        return self._serialize(raw_data)
