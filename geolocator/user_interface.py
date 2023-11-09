@@ -4,7 +4,7 @@ class UserInterface:
         print(answer)
 
     def get_location(self):
-        latitude = float(input("Fill in your Latitude: "))
-        longitude = float(input("Fill in your Longitude: "))
+        location_input = input("Fill in your Latitude and Longitude (comma-separated): ")
+        latitude, longitude = map(float, location_input.split(','))
 
         return latitude, longitude
