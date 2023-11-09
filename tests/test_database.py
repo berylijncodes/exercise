@@ -2,7 +2,6 @@ from unittest import TestCase
 
 from geolocator.database import Database
 
-
 class TestDatabase(TestCase):
     def setUp(self):
         self.database = Database()
