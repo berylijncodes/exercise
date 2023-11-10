@@ -38,6 +38,15 @@ You are free to choose how to ask for the information and how to show the result
 
 * You need **an OpenWeather API key:** The Geocoding API is free but needs a valid API key to allow responses. [Create an account](https://home.openweathermap.org/users/sign_up) at the OpenWeather site and copy your API key.
 
+* To run the application, you need to set up the following environment variables:
+
+API_KEY: Your OpenWeather API key.
+
+* You can set up these environment variables in a .env file located in the root directory of the project. Create a file named .env and add the following lines:
+
+`API_KEY=your_api_key_here` (Replace your_api_key_here with your actual OpenWeather API key.)
+
+
 * Provide the latitude and longitude and your API key as described [in the docs](https://openweathermap.org/api/geocoding-api).
 
 ➡️ A class `Client` is provided
